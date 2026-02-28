@@ -11,8 +11,33 @@ from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 
 from flask import Flask, render_template, request, jsonify
+from functools import wraps
+import time
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", os.urandom(32).hex())
+
+# ---------------------------------------------------------------------------
+# Simple in-memory rate limiter (per IP, 5 bookings per minute)
+# ---------------------------------------------------------------------------
+_rate_store: dict[str, list[float]] = {}
+RATE_LIMIT = 5
+RATE_WINDOW = 60  # seconds
+
+
+def rate_limited(f):
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        ip = request.remote_addr or "unknown"
+        now = time.time()
+        hits = _rate_store.get(ip, [])
+        hits = [t for t in hits if now - t < RATE_WINDOW]
+        if len(hits) >= RATE_LIMIT:
+            return jsonify({"ok": False, "errors": ["Too many requests. Please wait a moment."]}), 429
+        hits.append(now)
+        _rate_store[ip] = hits
+        return f(*args, **kwargs)
+    return wrapper
 
 # ---------------------------------------------------------------------------
 # Configuration – set these environment variables before deploying:
@@ -73,6 +98,7 @@ def index():
 
 
 @app.route("/api/book", methods=["POST"])
+@rate_limited
 def book():
     """Handle the booking form submission (AJAX)."""
     data = request.get_json(silent=True) or {}
