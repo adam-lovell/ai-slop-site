@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shiny Rides — Luxury Car Detailing</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+  <!-- ======= NAV ======= -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">SHINY<span>RIDES</span></a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#booking" class="nav-cta">Book Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======= HERO ======= -->
+  <section id="hero" class="parallax-section" data-speed="0.35">
+    <div class="hero-overlay"></div>
+    <div class="hero-content reveal">
+      <p class="hero-tag">LUXURY DETAILING REDEFINED</p>
+      <h1>Perfection in<br />Every Reflection</h1>
+      <p class="hero-sub">Hand-finished detailing that transforms your vehicle into a work of art.</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn btn-primary">Book Now</a>
+        <a href="#services" class="btn btn-ghost">Explore Services</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ======= SERVICES ======= -->
+  <section id="services" class="section">
+    <div class="container">
+      <p class="section-tag reveal">WHAT WE OFFER</p>
+      <h2 class="section-title reveal">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <h3>Exterior Detail</h3>
+          <p>Multi-stage paint correction, clay bar treatment, and ceramic sealant for a mirror-like finish.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+          </div>
+          <h3>Interior Detail</h3>
+          <p>Deep steam cleaning, leather conditioning, and odour elimination for a showroom-fresh cabin.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Ceramic Coating</h3>
+          <p>Professional-grade 9H ceramic coating providing up to 5 years of protection and hydrophobic shine.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3>Paint Protection Film</h3>
+          <p>Self-healing PPF shields your paint from rock chips, scratches, and environmental damage.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Express Wash & Wax</h3>
+          <p>A premium hand wash and carnauba wax applied with care — perfect for regular maintenance.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>VIP Concierge</h3>
+          <p>White-glove pickup & delivery. We come to you — anywhere within 50 miles of the city.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PARALLAX BREAK ======= -->
+  <section class="parallax-break parallax-section" data-speed="0.25">
+    <div class="parallax-break-overlay"></div>
+    <div class="parallax-break-text reveal">
+      <h2>Obsessive Attention to Detail</h2>
+      <p>Every vehicle receives a minimum of 8 hours of meticulous hand care.</p>
+    </div>
+  </section>
+
+  <!-- ======= GALLERY ======= -->
+  <section id="gallery" class="section section-dark">
+    <div class="container">
+      <p class="section-tag reveal">OUR WORK</p>
+      <h2 class="section-title reveal">Gallery</h2>
+
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="exterior">Exterior</button>
+        <button class="filter-btn" data-filter="interior">Interior</button>
+        <button class="filter-btn" data-filter="coating">Coating</button>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal" data-category="exterior">
+          <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=600&q=80" alt="Black luxury sedan with mirror finish" loading="lazy" />
+          <div class="gallery-caption"><span>Exterior Detail</span></div>
+        </div>
+        <div class="gallery-item reveal" data-category="interior">
+          <img src="https://images.unsplash.com/photo-1583267746897-2cf415887172?w=600&q=80" alt="Pristine leather interior" loading="lazy" />
+          <div class="gallery-caption"><span>Interior Detail</span></div>
+        </div>
+        <div class="gallery-item reveal" data-category="coating">
+          <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&q=80" alt="Ceramic coated supercar" loading="lazy" />
+          <div class="gallery-caption"><span>Ceramic Coating</span></div>
+        </div>
+        <div class="gallery-item reveal" data-category="exterior">
+          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80" alt="Red sports car gleaming" loading="lazy" />
+          <div class="gallery-caption"><span>Full Detail</span></div>
+        </div>
+        <div class="gallery-item reveal" data-category="interior">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="Dashboard detail" loading="lazy" />
+          <div class="gallery-caption"><span>Interior Restoration</span></div>
+        </div>
+        <div class="gallery-item reveal" data-category="coating">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80" alt="Corvette with ceramic coat" loading="lazy" />
+          <div class="gallery-caption"><span>PPF + Ceramic</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PRICING ======= -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <p class="section-tag reveal">TRANSPARENT PRICING</p>
+      <h2 class="section-title reveal">Choose Your Package</h2>
+
+      <div class="pricing-grid">
+        <!-- Essential -->
+        <div class="price-card reveal">
+          <div class="price-header">
+            <h3>Essential</h3>
+            <p class="price-desc">Perfect maintenance wash</p>
+          </div>
+          <div class="price-amount">
+            <span class="currency">$</span><span class="value">149</span>
+          </div>
+          <ul class="price-features">
+            <li>Hand wash &amp; dry</li>
+            <li>Wheel &amp; tire detail</li>
+            <li>Interior vacuum</li>
+            <li>Dashboard wipe-down</li>
+            <li>Window cleaning</li>
+          </ul>
+          <a href="#booking" class="btn btn-outline" data-service="Essential – $149">Select</a>
+        </div>
+
+        <!-- Signature -->
+        <div class="price-card featured reveal">
+          <div class="price-badge">Most Popular</div>
+          <div class="price-header">
+            <h3>Signature</h3>
+            <p class="price-desc">Complete interior + exterior</p>
+          </div>
+          <div class="price-amount">
+            <span class="currency">$</span><span class="value">349</span>
+          </div>
+          <ul class="price-features">
+            <li>Everything in Essential</li>
+            <li>Clay bar treatment</li>
+            <li>Single-stage polish</li>
+            <li>Carnauba wax sealant</li>
+            <li>Leather conditioning</li>
+            <li>Engine bay detail</li>
+          </ul>
+          <a href="#booking" class="btn btn-primary" data-service="Signature – $349">Select</a>
+        </div>
+
+        <!-- Prestige -->
+        <div class="price-card reveal">
+          <div class="price-header">
+            <h3>Prestige</h3>
+            <p class="price-desc">The ultimate transformation</p>
+          </div>
+          <div class="price-amount">
+            <span class="currency">$</span><span class="value">699</span>
+          </div>
+          <ul class="price-features">
+            <li>Everything in Signature</li>
+            <li>Multi-stage paint correction</li>
+            <li>9H ceramic coating (3 yr)</li>
+            <li>Trim restoration</li>
+            <li>Headlight restoration</li>
+            <li>VIP pickup &amp; delivery</li>
+          </ul>
+          <a href="#booking" class="btn btn-outline" data-service="Prestige – $699">Select</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PARALLAX BREAK 2 ======= -->
+  <section class="parallax-break parallax-break-2 parallax-section" data-speed="0.2">
+    <div class="parallax-break-overlay"></div>
+    <div class="parallax-break-text reveal">
+      <h2>Trusted by 2,500+ Happy Clients</h2>
+      <p>⭐⭐⭐⭐⭐ 4.9 average across Google, Yelp &amp; Instagram</p>
+    </div>
+  </section>
+
+  <!-- ======= TESTIMONIALS ======= -->
+  <section id="testimonials" class="section section-dark">
+    <div class="container">
+      <p class="section-tag reveal">REAL REVIEWS</p>
+      <h2 class="section-title reveal">What Our Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"I dropped off my Model S and picked up what looked like a brand-new car. By far the best detailing I've ever experienced."</p>
+          <div class="testimonial-author">— Alex R.</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"The ceramic coating still beads water like glass after 2 years. Worth every penny. Shiny Rides is the real deal."</p>
+          <div class="testimonial-author">— Maria T.</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"They picked up my Porsche at 7 AM and delivered it showroom-perfect by evening. Concierge service is next level."</p>
+          <div class="testimonial-author">— James K.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= BOOKING ======= -->
+  <section id="booking" class="section">
+    <div class="container container-narrow">
+      <p class="section-tag reveal">GET STARTED</p>
+      <h2 class="section-title reveal">Book Your Detail</h2>
+
+      <form id="bookingForm" class="booking-form reveal" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" />
+          </div>
+          <div class="form-group">
+            <label for="service">Service *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a package…</option>
+              <option value="Essential – $149">Essential – $149</option>
+              <option value="Signature – $349">Signature – $349</option>
+              <option value="Prestige – $699">Prestige – $699</option>
+              <option value="Custom">Custom / Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Additional Details</label>
+          <textarea id="message" name="message" rows="4" placeholder="Vehicle make & model, preferred date, special requests…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+          <span class="btn-text">Send Booking Request</span>
+          <span class="btn-loader" hidden>
+            <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="31.4 31.4" /></svg>
+          </span>
+        </button>
+        <div id="formFeedback" class="form-feedback" hidden></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">SHINY<span>RIDES</span></a>
+        <p>Luxury detailing that speaks for itself.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#booking">Book Now</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>bookings@shinyrides.com</p>
+        <p>(555) 987-6543</p>
+        <p>123 Detail Lane, Auto City</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Shiny Rides. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" hidden>
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
